@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalai Kumar R P – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #f9f8f5;
+  color: #1c1c1c;
+}
+
+/* ── TOP NAV ── */
+.topnav {
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 2rem;
+}
+
+.topnav-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.topnav-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1c1c2e;
+}
+
+.topnav-links {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.topnav-links a {
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-family: 'Fira Code', monospace;
+  color: #888;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.topnav-links a:hover {
+  background: #f3f0ea;
+  color: #1c1c2e;
+}
+
+/* ── PAGE WRAP ── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 4rem;
+}
+
+.hero-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1c1c2e 0%, #3a3a5c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f0c040;
+  margin: 0 auto 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1c1c2e;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-sub {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: #f0a500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.hero-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.hero-pill {
+  background: #fff;
+  border: 1px solid #e0dbd0;
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-size: 0.75rem;
+  font-family: 'Fira Code', monospace;
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 4.5rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: up 0.55s ease forwards;
+}
+
+.section:nth-child(1) { animation-delay: 0.05s; }
+.section:nth-child(2) { animation-delay: 0.12s; }
+.section:nth-child(3) { animation-delay: 0.19s; }
+.section:nth-child(4) { animation-delay: 0.26s; }
+.section:nth-child(5) { animation-delay: 0.33s; }
+.section:nth-child(6) { animation-delay: 0.40s; }
+
+@keyframes up {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.sec-num {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.6rem;
+  color: #f0a500;
+  background: #fff8e6;
+  border: 1px solid #f5dfa0;
+  padding: 3px 9px;
+  border-radius: 4px;
+  letter-spacing: 0.2em;
+  flex-shrink: 0;
+}
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1c1c2e;
+}
+
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: #e8e3d8;
+}
+
+/* ── CARD ── */
+.card {
+  background: #fff;
+  border: 1px solid #e8e3d8;
+  border-radius: 14px;
+  padding: 2rem 2.2rem;
+}
+
+/* ── SECTION 1: PROFILE ── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 3rem;
+}
+
+.pfield { display: flex; flex-direction: column; gap: 5px; }
+.pfield.full { grid-column: 1 / -1; }
+
+.plabel {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.58rem;
+  color: #bbb;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.pval {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1c1c2e;
+}
+
+.pval.email {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #3a82c4;
+}
+
+.pval.roll {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #c44b3a;
+}
+
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.sk {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 7px;
+  transition: transform 0.15s;
+  cursor: default;
+}
+
+.sk:hover { transform: translateY(-2px); }
+.sk.html { background: #fff0ee; color: #c44b3a; border: 1px solid #f5c8c3; }
+.sk.css  { background: #eef4ff; color: #3a82c4; border: 1px solid #c0d8f5; }
+.sk.js   { background: #fffbec; color: #c4860a; border: 1px solid #f0dfa0; }
+.sk.fe   { background: #f7eeff; color: #8a3ac4; border: 1px solid #d8b8f5; }
+.sk.be   { background: #edfff6; color: #1a9e6a; border: 1px solid #a8f0d0; }
+
+/* ── SECTION 2: ACADEMIC ── */
+.sem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.sem-box {
+  background: #fff;
+  border: 1px solid #e8e3d8;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sem-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: #f0a500;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.sem-box:hover { border-color: #f0a500; box-shadow: 0 4px 16px rgba(240,165,0,0.1); }
+.sem-box:hover::after { transform: scaleX(1); }
+
+.sem-lbl {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.6rem;
+  color: #aaa;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sem-gpa {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1c1c2e;
+  line-height: 1;
+}
+
+.sem-gpa span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.course-box {
+  background: #fff;
+  border: 1px solid #e8e3d8;
+  border-radius: 12px;
+  padding: 1.2rem 1.8rem;
+}
+
+.course-box h4 {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.58rem;
+  color: #bbb;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: #333;
+  padding: 0.5rem 0;
+}
+
+.cdot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #3ac47a;
+  flex-shrink: 0;
+}
+
+/* ── SECTION 3: PROJECTS ── */
+.proj-card {
+  background: #fff;
+  border: 1px solid #e8e3d8;
+  border-left: 4px solid #3a82c4;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  transition: box-shadow 0.2s;
+}
+
+.proj-card:hover { box-shadow: 0 6px 22px rgba(58,130,196,0.1); }
+
+.proj-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.proj-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1c1c2e;
+}
+
+.proj-tag {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.6rem;
+  color: #3a82c4;
+  background: #eef4ff;
+  border: 1px solid #c0d8f5;
+  padding: 3px 9px;
+  border-radius: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+.proj-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.tools { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.tool {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.65rem;
+  color: #555;
+  background: #f5f3ee;
+  border: 1px solid #e0dbd0;
+  padding: 4px 11px;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+}
+
+/* ── SECTION 4: CERTIFICATIONS ── */
+.cert-card {
+  background: #fff;
+  border: 1px solid #e8e3d8;
+  border-radius: 12px;
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cert-card:hover { border-color: #3ac47a; box-shadow: 0 4px 14px rgba(58,196,122,0.1); }
+
+.cert-ico {
+  width: 48px; height: 48px;
+  border-radius: 11px;
+  background: #edfff6;
+  border: 1px solid #a8f0d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.cert-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1c1c2e;
+  margin-bottom: 4px;
+}
+
+.cert-meta { display: flex; align-items: center; gap: 0.5rem; }
+
+.cert-plat {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.63rem;
+  color: #3ac47a;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cert-date {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.63rem;
+  color: #bbb;
+}
+
+.cert-date::before { content: '·'; margin-right: 6px; }
+
+/* ── SECTION 5: INTERNSHIP ── */
+.intern-card {
+  background: #fff;
+  border: 1px solid #e8e3d8;
+  border-radius: 14px;
+  padding: 2rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.intern-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f0a500, #e05c5c, #3a82c4);
+}
+
+.intern-card:hover { box-shadow: 0 8px 26px rgba(0,0,0,0.06); }
+
+.intern-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intern-co {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1c1c2e;
+  margin-bottom: 0.25rem;
+}
+
+.intern-role {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: #f0a500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.dur-box {
+  background: #fffbec;
+  border: 1px solid #f0dfa0;
+  border-radius: 10px;
+  padding: 0.8rem 1.4rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.dur-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c4860a;
+  line-height: 1;
+}
+
+.dur-l {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.55rem;
+  color: #c4860a;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.intern-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ── SECTION 6: ACHIEVEMENTS ── */
+.ach-box {
+  background: #fff;
+  border: 1.5px dashed #ddd;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.ach-box .ico { font-size: 2.4rem; margin-bottom: 0.8rem; opacity: 0.28; }
+
+.ach-box p {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  color: #ccc;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+}
+
+.ach-box em { color: #f0a500; font-style: normal; }
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid #ebebeb;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.65rem;
+  color: #ccc;
+  letter-spacing: 0.1em;
+  margin-top: 2rem;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f5f3ee; }
+::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-name">Kalai Kumar R P</div>
+    <div class="topnav-links">
+      <a href="#s1">Profile</a>
+      <a href="#s2">Academic</a>
+      <a href="#s3">Projects</a>
+      <a href="#s4">Certs</a>
+      <a href="#s5">Internship</a>
+      <a href="#s6">Achievements</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-avatar">KK</div>
+    <h1>Kalai Kumar R P</h1>
+    <div class="hero-sub">Full Stack Developer</div>
+    <div class="hero-pills">
+      <span class="hero-pill">RA2411003050224</span>
+      <span class="hero-pill">kk2925@srmist.edu.in</span>
+      <span class="hero-pill">SRM Institute of Science &amp; Technology</span>
+    </div>
+  </div>
+
+  <!-- ── SECTION 1: STUDENT PROFILE ── -->
+  <section class="section" id="s1">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Student Profile</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="card">
+      <div class="profile-grid">
+        <div class="pfield">
+          <span class="plabel">Full Name</span>
+          <span class="pval">Kalai Kumar R P</span>
+        </div>
+        <div class="pfield">
+          <span class="plabel">Roll Number</span>
+          <span class="pval roll">RA2411003050224</span>
+        </div>
+        <div class="pfield full">
+          <span class="plabel">Email Address</span>
+          <span class="pval email">kk2925@srmist.edu.in</span>
+        </div>
+        <div class="pfield full">
+          <span class="plabel">Skills</span>
+          <div class="skill-row">
+            <span class="sk html">HTML</span>
+            <span class="sk css">CSS</span>
+            <span class="sk js">JavaScript</span>
+            <span class="sk fe">Frontend</span>
+            <span class="sk be">Backend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: ACADEMIC DETAILS ── -->
+  <section class="section" id="s2">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Academic Details</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="sem-grid">
+      <div class="sem-box">
+        <div class="sem-lbl">Semester 1</div>
+        <div class="sem-gpa">8.72<span> GPA</span></div>
+      </div>
+      <div class="sem-box">
+        <div class="sem-lbl">Semester 2</div>
+        <div class="sem-gpa">8.95<span> GPA</span></div>
+      </div>
+      <div class="sem-box">
+        <div class="sem-lbl">Semester 3</div>
+        <div class="sem-gpa">8.30<span> GPA</span></div>
+      </div>
+    </div>
+    <div class="course-box">
+      <h4>Courses Completed</h4>
+      <div class="course-item">
+        <span class="cdot"></span>
+        Linux Fundamentals
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: PROJECTS ── -->
+  <section class="section" id="s3">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Projects</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-top">
+        <div class="proj-name">Smart Parking System</div>
+        <span class="proj-tag">IoT / Cloud</span>
+      </div>
+      <p class="proj-desc">
+        Helps to find free parking slots available in real time. Uses an ESP32 microcontroller with sensors to detect slot occupancy and syncs with the cloud to display live availability to users instantly.
+      </p>
+      <div class="tools">
+        <span class="tool">Python</span>
+        <span class="tool">ESP32</span>
+        <span class="tool">Cloud</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: CERTIFICATIONS ── -->
+  <section class="section" id="s4">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Certifications</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-ico">🐧</div>
+      <div>
+        <div class="cert-name">Linux Fundamentals</div>
+        <div class="cert-meta">
+          <span class="cert-plat">Coursera</span>
+          <span class="cert-date">Nov 2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: INTERNSHIP ── -->
+  <section class="section" id="s5">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Internship</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="intern-card">
+      <div class="intern-top">
+        <div>
+          <div class="intern-co">Ediglobe Organisation</div>
+          <div class="intern-role">Full Stack Development</div>
+        </div>
+        <div class="dur-box">
+          <div class="dur-n">4</div>
+          <div class="dur-l">Months</div>
+        </div>
+      </div>
+      <p class="intern-desc">
+        Worked as a Full Stack Developer intern at Ediglobe Organisation for 4 months. Contributed to end-to-end web application development — building both frontend interfaces and backend server logic to deliver complete, functional web solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: ACHIEVEMENTS ── -->
+  <section class="section" id="s6">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">Achievements</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="ach-box">
+      <div class="ico">🏆</div>
+      <p>No achievements added yet.<br><em>Awards &amp; competition details will appear here.</em></p>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  Kalai Kumar R P &nbsp;·&nbsp; RA2411003050224 &nbsp;·&nbsp; kk2925@srmist.edu.in
+</footer>
+
+</body>
+</html>
